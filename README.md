@@ -1,7 +1,7 @@
 # coffee-machine
 
 もしもし !
-Repositori ini berisi pengembangan program Coffee Machine yang saya kembangkan bersama kelompok 7 K-31 Mata Kuliah WI1102
+Repositori ini berisi pengembangan program Coffee Machine yang saya kembangkan bersama kelompok 7 K-31 Mata Kuliah WI1102.
 Special thanks buat:
 - Aisyah udah ngerjain mainly desain dari proyek ini,
 - Naufal udah ngerjain mainly pembuatan flowchart,
