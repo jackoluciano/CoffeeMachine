@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Input</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        input[type="password"] {
+            letter-spacing: 0.3em;
+        }
+        .btn-clickable {
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-1px);
+        }
+        .btn-clickable:hover {
+            transform: translateY(0);
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-[#7a7a7a]">
+    <div class="bg-white w-96 flex flex-col rounded-3xl shadow-2xl">
+        <div class="bg-[#f3f3f3] p-6 text-center flex-1 flex flex-col justify-end rounded-t-3xl shadow-2xl">
+            <h1 class="text-lg font-semibold mb-4">Masukkan Pin Anda</h1>
+            <div class="bg-[#ffffff] rounded-full p-4 mb-6 shadow-md">
+                <input id="pinInput" type="password" class="w-full bg-transparent text-center outline-none" disabled>
+            </div>
+            <form method="post">
+                <button class="bg-[#372E27] text-white w-full py-2 rounded-3xl mb-4 font-semibold shadow-3xl btn-clickable">Lanjutkan</button>
+            </form>
+        </div>
+        <div class="bg-[#C9C0B9] p-4 rounded-b-3xl flex-1 shadow-md">
+            <div class="grid grid-cols-3 text-center text-lg font-semibold text-gray-700 h-full">
+                <button class="py-4" onclick="appendPin('1')">1</button>
+                <button class="py-4" onclick="appendPin('2')">2</button>
+                <button class="py-4" onclick="appendPin('3')">3</button>
+                <button class="py-4" onclick="appendPin('4')">4</button>
+                <button class="py-4" onclick="appendPin('5')">5</button>
+                <button class="py-4" onclick="appendPin('6')">6</button>
+                <button class="py-4" onclick="appendPin('7')">7</button>
+                <button class="py-4" onclick="appendPin('8')">8</button>
+                <button class="py-4" onclick="appendPin('9')">9</button>
+                <div></div>
+                <button class="py-4" onclick="appendPin('0')">0</button>
+                <button class="py-4" onclick="deleteLastDigit()">
+                    <i class="fas fa-backspace text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function appendPin(digit) {
+            const pinInput = document.getElementById('pinInput');
+            if (pinInput.value.length < 6) {
+                pinInput.value += digit;
+            }
+        }
+
+        function deleteLastDigit() {
+            const pinInput = document.getElementById('pinInput');
+            pinInput.value = pinInput.value.slice(0, -1);
+        }
+    </script>
+</body>
+</html>

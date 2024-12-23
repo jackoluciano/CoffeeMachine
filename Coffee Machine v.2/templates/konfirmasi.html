@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Konfirmasi Pembayaran</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-clickable {
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-clickable:hover {
+            transform: translateY(0);
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .payment-container {
+            height: 580px;
+        }
+    </style>
+</head>
+<body class="bg-[#7a7a7a] flex items-center justify-center min-h-screen">
+    <div class="bg-[#f3f3f3] rounded-3xl p-6 w-96 shadow-2xl payment-container">
+        <br><br>
+        <h1 class="text-center text-lg text-[16px] font-semibold mb-4">Konfirmasi Pembayaran</h1>
+        <div class="bg-[#C9C0B9] rounded-3xl p-4 mb-4">
+            <div class="flex justify-between items-center">
+                <span class="text-[14px] text-[#626160] font-bold">Total Tagihan</span>
+                <span class="text-[11px] text-gray-600 text-right font-medium">
+                    ORDER ID<br />
+                    {{orderID}}
+                </span>
+            </div>
+            <div class="text-3xl font-bold text-left mt-2">Rp{{Total}}</div>
+        </div>
+        <div class="bg-[#C9C0B9] rounded-3xl p-4 mb-4">
+            <h2 class="text-xs font-semibold mb-2">Rincian Pembayaran</h2>
+            <div class="text-xs">
+                <div class="flex justify-between">
+                    <span class="text-[11px] text-[#3c3c3c] font-medium">Nama Merchant</span>
+                    <span class="text-[11px] font-semibold text-right">Coffee Machine</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-[11px] text-[#3c3c3c] font-medium">Lokasi Merchant</span>
+                    <span class="text-[11px] font-semibold text-right">ITB Kampus Jatinangor</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-[11px] text-[#3c3c3c] font-medium">Nama Barang</span>
+                    <span class="text-[11px] font-semibold text-right">1x {{namaBarang}}</span>
+                </div>
+                <div style="text-align: right;">
+                    <span class="text-[11px] text-right">{{ice}}, {{sugar}}, {{shot}}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-[11px] text-[#3c3c3c] font-medium">Metode Pembayaran</span>
+                    <span class="text-[11px] font-semibold text-right">JEKOPAY</span>
+                </div>
+            </div>
+        </div>
+        <form method="post">
+            <button class="bg-[#372E27] text-white w-full py-2 rounded-3xl mb-4 font-semibold shadow-3xl btn-clickable">
+                Konfirmasi Pembayaran
+            </button>
+        </form>
+        <div class="flex justify-center">
+            <img style="height: 70; margin: -25px;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtbbJ3TRKuNPdpYr9_9kWELsJn453uR5B2qI20Vmu2SjMoa5-5lMTVf_PorRQGg69lbBrSikqkrjOG0InWD2BlHu2Cjumr3mQlIZt8ILDijyaeyI1kHeAfQFBtoNKoCilGeWZzheRKlmIrrjkMnkh5s6EhqEJei7ZyiGk9kKJHhkW-smvWXV_0CEOR/s1250/QRIS.png" />
+        </div>
+    </div>
+</body>
+</html>
